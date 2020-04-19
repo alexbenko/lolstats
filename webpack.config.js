@@ -1,11 +1,12 @@
  const path = require('path');
  module.exports = {
     // define entry file and output
-    entry: './client/src/index.js',
+    entry: './client/index.js',
     output: {
         path: path.resolve('dist'),
         filename: 'main.js'
     },
+    mode: 'development',
     // define babel loader
     module: {
         rules: [
