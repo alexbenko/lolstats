@@ -9,6 +9,7 @@ import exampleChampData   from '../example/exampleChampData'
 
 //right now only works with NA accounts
 //can set up a drop down menu for user to select region
+//TODO Add Welcome Page that isnt example data
 
 class App extends React.Component {
   constructor(props){
