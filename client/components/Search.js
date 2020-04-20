@@ -7,21 +7,35 @@ class Search extends React.Component{
     this.state = {
       search: ''
     };
+
+    this.handleInputChange = this.handleInputChange.bind(this);
+    this.submitSearch = this.submitSearch.bind(this);
   }
 
   handleInputChange(search){
     //console.log(search)
-    this.props.handleSearchChange(search.target.value);
+    //this.props.handleSearchChange(search.target.value);
     this.setState({
-      value: search.target.value,
-      loaded: false
+      search: search.target.value,
     })
   }
+
+  submitSearch(event){
+    event.preventDefault();
+
+    this.props.handleSearchChange(this.state.search);
+
+  }
+
   render(){
     return (
 
     <div className="search">
-      <input type="text" placeholder="Search For Summoner.." value={this.state.value} onChange={this.handleInputChange.bind(this)}/>
+      <form onSubmit={this.submitSearch}>
+        <input type="text" placeholder="Search For Summoner.." value={this.state.value} onChange={this.handleInputChange}/>
+        <input type="submit" value="Submit"/>
+      </form>
+
     </div>
     )
 
