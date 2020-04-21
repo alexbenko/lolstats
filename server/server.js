@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 
 
-var port =  process.env.PORT || 4200;
+var port =  process.env.PORT || 4200 ;
 
 app.use(cors());
 app.use(bodyParser.json()); //makes sure the body is parsed into a JSON
@@ -25,6 +25,6 @@ app.use('/', express.static(path.join(__dirname, '../dist')));
 
 
 app.listen( port, () =>{
-  console.log(`lolstats is runnin at port : ${port}`);
+  console.log(`lolstats is runnin at http://localhost:${port}`);
 });
 
