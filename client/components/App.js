@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/App.css';
+import '../styles/champions.css';
 import Profile from './Profile.js'
 import Search from './Search.js'
 import MostPlayedChamps from './mostPlayedChamps.js';
