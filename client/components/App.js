@@ -48,12 +48,13 @@ class App extends React.Component {
       this.setState({
 
         loaded:true,
-        currentProfile: profile,
+        currentProfile: profile
 
       }, () => {
           this.props.searchForChamps ({encryptedId: this.state.currentProfile["id"], key: this.props.RIOT_API_KEY}, (champData) =>
              this.setState({
-              currentChamps: champData
+              currentChamps: champData,
+              loaded: true
              })
           );
 
@@ -66,6 +67,18 @@ class App extends React.Component {
 
     let {loaded} = this.state;
 
+    if(!loaded){
+      return (
+        <div>
+          <h1>LOLStats</h1>
+          <nav className="nav">
+            <Search handleSearchChange={this.getProfile.bind(this)} />
+          </nav>
+
+
+        </div>
+      );
+    }
 
       return (
         <div>
