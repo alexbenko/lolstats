@@ -17,6 +17,7 @@ var MostPlayedChamps = ({champs}) => {
         return (
           <div className="champions">
             <h3>{getChampionName(champ["championId"])}</h3>
+            <h3>Mastery Points: {champ["championPoints"]}</h3>
           </div>
         );
 
