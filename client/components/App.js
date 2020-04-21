@@ -42,8 +42,6 @@ class App extends React.Component {
       search: search
     };
 
-    console.log('Profile:' ,searchObj);
-
     //https://stackoverflow.com/questions/45992682/calling-functions-after-state-change-occurs-in-reactjs
     this.props.searchForProfile (searchObj, (profile) =>
       this.setState({

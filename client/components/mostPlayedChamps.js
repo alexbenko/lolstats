@@ -5,12 +5,8 @@ import '../styles/champions.css';
 var MostPlayedChamps = ({champs}) => {
   return (
   <div className="everything">
-    <div>
       <h3>Most Played Champs</h3>
-    </div>
-
     <div className="champList">
-
 
       {champs.map((champ) => {
 
