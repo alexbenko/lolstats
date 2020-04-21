@@ -2,12 +2,15 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const cors = require('cors');
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
+const morgan = require('morgan');
+
 
 var port =  process.env.PORT || 4200;
 
 app.use(cors());
 app.use(bodyParser.json()); //makes sure the body is parsed into a JSON
+app.use(morgan('dev'));
 
 //app.get('/test', (req,res) => res.send('Set up Correctly')); want to make sure the api is set up
 
