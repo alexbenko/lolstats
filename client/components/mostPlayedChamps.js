@@ -1,10 +1,11 @@
 import React from 'react';
-import getChampionName from './getChampionName.js'
+import getChampionName from './getChampionName.js';
+import '../styles/champions.css';
 
 var MostPlayedChamps = ({champs}) => {
   return (
   <div className="everything">
-    <div className="champTitle">
+    <div>
       <h3>Most Played Champs</h3>
     </div>
 
@@ -13,7 +14,11 @@ var MostPlayedChamps = ({champs}) => {
 
       {champs.map((champ) => {
 
-        return <h3>{getChampionName(champ["championId"])}</h3>
+        return (
+          <div className="champions">
+            <h3>{getChampionName(champ["championId"])}</h3>
+          </div>
+        );
 
       })}
     </div>
