@@ -1,6 +1,6 @@
 import React from 'react';
 import getChampionName from './getChampionName.js';
-import '../styles/champions.css';
+
 
 var MostPlayedChamps = ({champs}) => {
   return (
