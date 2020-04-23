@@ -8,7 +8,7 @@ var searchForProfile = ({search,key},cb) => {
 
     axios.get(proxy + target)
       .then((res) =>{
-        console.log(res.data);
+        //console.log(res.data);
         cb(res.data);
       })
       .catch((error) => {
