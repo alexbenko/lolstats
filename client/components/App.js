@@ -7,6 +7,8 @@ import MostPlayedChamps from './mostPlayedChamps.js';
 import loading from '../images/teemo_dance.gif'
 import exampleProfileData from '../example/exampleProfileData'
 import exampleChampData   from '../example/exampleChampData'
+import exampleRankData from '../example/exampleRankData';
+
 
 //right now only works with NA accounts
 //can set up a drop down menu for user to select region
@@ -19,23 +21,13 @@ class App extends React.Component {
       loaded:false,
       currentProfile: exampleProfileData,
       encyptedId: null,
-      currentChamps: exampleChampData
+      currentChamps: exampleChampData,
+      rankData: exampleRankData
     }
   }
 
   //maybe componentDidUpdate??
 
-  /*
-  componentDidUpdate(prevState){
-    console.log(prevState.currentProfile);
-    if(this.state.currentProfile  !== prevState.currentProfile){
-      this.setState({
-        encyptedId: this.state.currentProfile["id"]
-      });
-    }
-
-  }
-*/
   getProfile(search){
     let searchObj = {
       key : this.props.RIOT_API_KEY,
@@ -49,7 +41,18 @@ class App extends React.Component {
         loaded:true,
         currentProfile: profile
 
-      }, () => {
+      }, () =>{
+        this.rank()
+        })
+    );
+
+  }
+
+  rank(){
+    this.props.getRank ({encryptedId: this.state.currentProfile["id"], key: this.props.RIOT_API_KEY}, (rank) =>{
+      this.setState({
+        rankData: rank
+        }, () => {
           this.props.searchForChamps ({encryptedId: this.state.currentProfile["id"], key: this.props.RIOT_API_KEY}, (champData) =>
              this.setState({
               currentChamps: champData,
@@ -58,9 +61,22 @@ class App extends React.Component {
           );
 
       })
-    );
-
+    });
   }
+
+  componentDidUpdate(prevProps, prevState){
+    /*
+    if(this.state.encryptedId !== prevState.encryptedId){
+      this.props.getRank ({encryptedId: this.state.currentProfile["id"], key: this.props.RIOT_API_KEY}, (rank) =>
+      this.setState({
+        rankData: rank
+        })
+      );
+    }
+    */
+  }
+
+
 
   render() {
 
@@ -87,18 +103,16 @@ class App extends React.Component {
           </nav>
 
           <div className ='prof'>
-            <Profile profile={this.state.currentProfile} />
+            <Profile profile={this.state.currentProfile} rank={this.state.rankData} />
             <MostPlayedChamps champs={this.state.currentChamps}/>
           </div>
 
         </div>
       );
 
-
   };
-
-
 
 }
 
 export default App;
+
