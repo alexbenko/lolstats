@@ -1,1 +1,1 @@
-![LOLSTats Demo](/newestUpdate.gif)
+![LOLSTats Demo](/ver2.gif)
