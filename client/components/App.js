@@ -64,20 +64,6 @@ class App extends React.Component {
     });
   }
 
-  componentDidUpdate(prevProps, prevState){
-    /*
-    if(this.state.encryptedId !== prevState.encryptedId){
-      this.props.getRank ({encryptedId: this.state.currentProfile["id"], key: this.props.RIOT_API_KEY}, (rank) =>
-      this.setState({
-        rankData: rank
-        })
-      );
-    }
-    */
-  }
-
-
-
   render() {
 
     let {loaded} = this.state;
