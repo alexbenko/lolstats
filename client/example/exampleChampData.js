@@ -60,8 +60,6 @@ var exampleChampData =
         "summonerId": "JxRLg70NObxwRs_b6GzMF2su7FVlwECmDHmQA9Jn1R35R78"
     },
   ];
-var encryptedId = exampleProfileData['id'];
 
-console.log(encryptedId);
 
 export default exampleChampData;
