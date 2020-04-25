@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 
 
-var port =  process.env.PORT || 420 ;
+var port =  process.env.PORT || 3000 ;
 
 app.use(cors());
 app.use(bodyParser.json()); //makes sure the body is parsed into a JSON
@@ -14,7 +14,6 @@ app.use(morgan('dev'));
 
 
 
-//this send the file entire app to the server
 app.use('/', express.static(path.join(__dirname, '../dist')));
 
 
