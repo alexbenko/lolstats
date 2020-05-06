@@ -26,7 +26,7 @@ class App extends React.Component {
     }
   }
 
-  //maybe componentDidUpdate??
+
 
   getProfile(search){
     let searchObj = {
@@ -37,8 +37,7 @@ class App extends React.Component {
     //https://stackoverflow.com/questions/45992682/calling-functions-after-state-change-occurs-in-reactjs
     this.props.searchForProfile (searchObj, (profile) =>
       this.setState({
-
-        loaded:true,
+        loded:true,
         currentProfile: profile
 
       }, () =>{
@@ -70,6 +69,7 @@ class App extends React.Component {
 
     if(!loaded){
       return (
+
         <div>
           <h1>LOLStats</h1>
           <nav className="nav">

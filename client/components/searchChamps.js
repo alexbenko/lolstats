@@ -5,6 +5,7 @@ var searchForChampions = ({encryptedId,key}, cb) =>{
   var proxy = 'https://cors-anywhere.herokuapp.com/';
   var target = `https://na1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/${encryptedId}?api_key=${key}`;
 
+  console.log('Getting Champion Data');
   axios.get(proxy + target)
     .then(res => {
       cb(res.data);

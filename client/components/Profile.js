@@ -3,7 +3,6 @@ import React from 'react';
 var Profile = (props) => (
 
   <div className="prof">
-     {console.log("From profile: ",props.rank)}
     <h3>{`Summoner: ${props.profile.name}`}</h3>
     <h3>{`Level: ${props.profile.summonerLevel}`}</h3>
     <h3>{`Solo-Duo Rank: ${props.rank[0].tier + ' ' + props.rank[0].rank}`}</h3>

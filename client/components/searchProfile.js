@@ -6,9 +6,10 @@ var searchForProfile = ({search,key},cb) => {
     var proxy = 'https://cors-anywhere.herokuapp.com/';
     var target = `https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${search}?api_key=${key}`;
 
+    console.log('Getting Profile Data');
     axios.get(proxy + target)
       .then((res) =>{
-        //console.log(res.data);
+
         cb(res.data);
       })
       .catch((error) => {

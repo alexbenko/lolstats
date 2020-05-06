@@ -7,8 +7,8 @@
   "description": "League Of Legends stat website",
   "main": "index.js",
   "scripts": {
-    "start": " nodemon server/server.js",
-    "build": "webpack -w",
+    "start": "nodemon server/server.js",
+    "build": "webpack",
     "heroku-postbuild": "cd client && npm install --only=dev && npm install"
   },
   "repository": {
@@ -36,6 +36,8 @@
     "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
+    "@aws-amplify/ui-react": "^0.2.5",
+    "aws-amplify": "^3.0.10",
     "axios": "^0.19.2",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",

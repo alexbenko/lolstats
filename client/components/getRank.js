@@ -7,7 +7,7 @@ var getRank = ({encryptedId,key},cb) =>{
   console.log("Getting Rank");
   axios.get(proxy + target)
   .then((res) =>{
-    console.log("Resuts from Rank: ",res)
+
     cb(res.data);
   })
   .catch((err)=>{
