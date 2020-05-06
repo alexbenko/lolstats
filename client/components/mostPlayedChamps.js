@@ -12,6 +12,7 @@ var MostPlayedChamps = ({champs}) => {
 
         return (
           <div className="champions">
+            <img src={`http://ddragon.leagueoflegends.com/cdn/10.9.1/img/champion/${getChampionName(champ["championId"])}.png`}/>
             <h3>{getChampionName(champ["championId"])}</h3>
             <h3>Mastery Points: {champ["championPoints"]}</h3>
           </div>
