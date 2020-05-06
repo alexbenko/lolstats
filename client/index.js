@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/index.css';
 import App from './components/App';
-import RIOT_API_KEY from './config/rito.js';
+import RIOT_API_KEY from process.env.RIOT_API_KEY || './config/rito.js';
 import searchForProfile from './components/searchProfile.js';
 import searchForChamps from './components/searchChamps.js';
 import getRank from './components/getRank.js';
