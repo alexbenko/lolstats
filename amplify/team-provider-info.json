@@ -1,23 +1,15 @@
 {
     "dev": {
         "awscloudformation": {
-            "AuthRoleName": "amplify-lolstats-dev-160853-authRole",
-            "UnauthRoleArn": "arn:aws:iam::556165474345:role/amplify-lolstats-dev-160853-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::556165474345:role/amplify-lolstats-dev-160853-authRole",
+            "AuthRoleName": "amplify-lolstats-dev-191303-authRole",
+            "UnauthRoleArn": "arn:aws:iam::556165474345:role/amplify-lolstats-dev-191303-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::556165474345:role/amplify-lolstats-dev-191303-authRole",
             "Region": "us-west-2",
-            "DeploymentBucketName": "amplify-lolstats-dev-160853-deployment",
-            "UnauthRoleName": "amplify-lolstats-dev-160853-unauthRole",
-            "StackName": "amplify-lolstats-dev-160853",
-            "StackId": "arn:aws:cloudformation:us-west-2:556165474345:stack/amplify-lolstats-dev-160853/64bb9b80-8f25-11ea-a249-0a95a0468cc2",
-            "AmplifyAppId": "d346h1pmx0bd10"
-        },
-        "categories": {
-            "hosting": {
-                "amplifyhosting": {
-                    "appId": "d346h1pmx0bd10",
-                    "type": "manual"
-                }
-            }
+            "DeploymentBucketName": "amplify-lolstats-dev-191303-deployment",
+            "UnauthRoleName": "amplify-lolstats-dev-191303-unauthRole",
+            "StackName": "amplify-lolstats-dev-191303",
+            "StackId": "arn:aws:cloudformation:us-west-2:556165474345:stack/amplify-lolstats-dev-191303/1ed9c000-8f3f-11ea-bce1-0a13a2454304",
+            "AmplifyAppId": "d25uc5umua7z07"
         }
     }
 }
