@@ -10,6 +10,14 @@
             "StackName": "amplify-lolstats-dev-191303",
             "StackId": "arn:aws:cloudformation:us-west-2:556165474345:stack/amplify-lolstats-dev-191303/1ed9c000-8f3f-11ea-bce1-0a13a2454304",
             "AmplifyAppId": "d25uc5umua7z07"
+        },
+        "categories": {
+            "hosting": {
+                "amplifyhosting": {
+                    "appId": "d25uc5umua7z07",
+                    "type": "manual"
+                }
+            }
         }
     }
 }
