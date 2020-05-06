@@ -3,7 +3,7 @@ import axios from 'axios';
 var searchForProfile = ({search,key},cb) => {
   //only way i was able to access Riot api was using this proxy
     //https://github.com/Rob--W/cors-anywhere/
-    var proxy = 'https://cors-anywhere.herokuapp.com/';
+    var proxy = 'https://lolstats-cors-proxy.herokuapp.com/';
     var target = `https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${search}?api_key=${key}`;
 
     console.log('Getting Profile Data');

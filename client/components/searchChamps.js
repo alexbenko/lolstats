@@ -2,7 +2,7 @@
 import axios from 'axios';
 var searchForChampions = ({encryptedId,key}, cb) =>{
   //change the state inside the get request
-  var proxy = 'https://cors-anywhere.herokuapp.com/';
+  var proxy = 'https://lolstats-cors-proxy.herokuapp.com/';
   var target = `https://na1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/${encryptedId}?api_key=${key}`;
 
   console.log('Getting Champion Data');
