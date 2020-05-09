@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 
 
-var port =  process.env.PORT || 3000 ;
+const port =  process.env.PORT || 1234 ;
 
 app.use(cors());
 app.use(bodyParser.json()); //makes sure the body is parsed into a JSON
