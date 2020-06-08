@@ -1,26 +1,16 @@
 const express = require('express');
-const path = require('path');
-const app = express();
-const cors = require('cors');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
+const cors = require('cors');
+const path = require('path');
 
+const app = express();
+const port = process.env.PORT || 4200 ;
 
-const port =  process.env.PORT || 1234 ;
-
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:true}));
 app.use(cors());
-app.use(bodyParser.json()); //makes sure the body is parsed into a JSON
 app.use(morgan('dev'));
 
-
-
-app.use('/', express.static(path.join(__dirname, '../dist')));
-
-
-
-
-
-app.listen( port, () =>{
-  console.log(`lolstats is runnin at http://localhost:${port}`);
-});
-
+app.use('/', express.static(path.join(__dirname, '../client/dist')));
+app.listen(port, () => console.log(`app listening at http://localhost${port}`));

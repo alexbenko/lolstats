@@ -1,18 +1,16 @@
 import React from 'react';
-import '../styles/App.css';
-import '../styles/champions.css';
-import Profile from './Profile.js'
-import Search from './Search.js'
+import Profile from './Profile.jsx'
+import Search from './Search.jsx'
 import MostPlayedChamps from './mostPlayedChamps.js';
-import loading from '../images/teemo_dance.gif'
-import exampleProfileData from '../example/exampleProfileData'
-import exampleChampData   from '../example/exampleChampData'
-import exampleRankData from '../example/exampleRankData';
+import searchForProfile from './searchProfile.js';
+import searchForChamps from './searchChamps.js';
+import getRank from './getRank.js';
+
 
 
 //right now only works with NA accounts
 //can set up a drop down menu for user to select region
-//TODO Add Welcome Page that isnt example data
+
 
 class App extends React.Component {
   constructor(props){
@@ -35,7 +33,7 @@ class App extends React.Component {
     };
 
     //https://stackoverflow.com/questions/45992682/calling-functions-after-state-change-occurs-in-reactjs
-    this.props.searchForProfile (searchObj, (profile) =>
+    searchForProfile (searchObj, (profile) =>
       this.setState({
         loded:true,
         currentProfile: profile
@@ -48,11 +46,11 @@ class App extends React.Component {
   }
 
   rank(){
-    this.props.getRank ({encryptedId: this.state.currentProfile["id"], key: this.props.RIOT_API_KEY}, (rank) =>{
+    getRank ({encryptedId: this.state.currentProfile["id"], key: this.props.RIOT_API_KEY}, (rank) =>{
       this.setState({
         rankData: rank
         }, () => {
-          this.props.searchForChamps ({encryptedId: this.state.currentProfile["id"], key: this.props.RIOT_API_KEY}, (champData) =>
+          searchForChamps ({encryptedId: this.state.currentProfile["id"], key: this.props.RIOT_API_KEY}, (champData) =>
              this.setState({
               currentChamps: champData,
               loaded: true
@@ -75,7 +73,6 @@ class App extends React.Component {
           <nav className="nav">
             <Search handleSearchChange={this.getProfile.bind(this)} />
           </nav>
-
 
         </div>
       );
